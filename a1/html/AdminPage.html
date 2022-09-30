@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrator Login</title>
+</head>
+<body>
+    <fieldset>
+        <legend><h2>Administrator Login</h2></legend>
+        <p>Enter your Administrator ID & Password to Login.</p>
+        <form id="login" action="AdminOptions.html" style="width:100%">
+            <ol>
+                <li>
+                    <label for="adminid">Administrator ID<em>*</em></label>
+                    <input id="adminid" name="admindid" type="text" placeholder="Enter Administrator ID" required/>
+                </li>
+                <li>
+                    <label for="adminpass">Password<em>*</em></label>
+                    <input id="adminpass" name="adminpass" type="text" placeholder="Enter Password" required/>
+                </li>
+            </ol>
+            <input type="submit" value="Login"/>
+        </form>
+        <form id="cancel" action="MainPage.html" style="width: 100%">
+            <input type="submit" value="Cancel">
+        </form>
+
+    </fieldset>
+</body>
+</html>

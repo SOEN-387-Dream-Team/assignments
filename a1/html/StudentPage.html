@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Login</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="row">
+    <fieldset>
+        <legend><h2>Student Login</h2></legend>
+        <p>Enter your Student ID & Password to Login.</p>
+        <form id="login" action="StudentOptions.html" style="width:100%">
+            <ol>
+                <li>
+                    <label for="studentid">Student ID<em>*</em></label>
+                    <input id="studentid" name="studentid" type="text" placeholder="Enter Student ID" required/>
+                </li>
+                <li>
+                    <label for="studentpass">Password<em>*</em></label>
+                    <input id="studentpass" name="studentpass" type="text" placeholder="Enter Password" required/>
+                </li>
+            </ol>
+            <input type="submit" value="Login"/>
+        </form>
+        <form id="cancel" action="MainPage.html" style="width: 100%">
+            <input type="submit" value="Cancel">
+        </form>
+    </fieldset>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Options</title>
+    <style>
+        .inline {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend><h2>Student Information</h2></legend>
+        <div>
+            <ol>
+                <li>
+                    <label>Student ID<em>*</em></label>
+                    Student Id
+                </li>
+                <li>
+                    <label>First Name<em>*</em></label>
+                    First Name
+                </li>
+                <li>
+                    <label>Last Name<em>*</em></label>
+                    Last Name
+            </li>
+                <li>
+                    <label>Address<em>*</em></label>
+                    Address
+                </li>
+                <li>
+                    <label>Email<em>*</em></label>
+                    Email
+                </li>
+                <li>
+                    <label>Phone Number<em>*</em></label>
+                    Phone Number
+                </li>
+                <li>
+                    <label>Date Of Birth<em>*</em></label>
+                    Date of Birth
+                </li>
+            </ol>
+        </div>
+        <hr style="width: 50%; text-align: left; margin-left: 0">
+        <div>
+            <div>
+                <li>
+                    <span class="inline">
+                        <label for="courseChoices">Choose a course to add: </label>
+                    </span>
+                        <span class="inline">
+                        <select name="course=list" id="courseChoices">
+                            <option value="comp248">COMP248</option>
+                            <option value="comp335">COMP335</option>
+                            <option value="comp346">COMP346</option>
+                            <option value="soen287">SOEN287</option>
+                            <option value="soen387">SOEN387</option>
+                            <option value="encs282">ENCS282</option>
+                            <option value="encs393">ENCS393</option>
+                        </select>
+                    </span>
+                        <span class="inline">
+                        <button id="courseChoices" type="submit">Add Class
+                            <span class="glyphicon glyphicon-align-left"></span>
+                        </button>
+                    </span>
+                </li>
+            </div>
+            <div>
+                display added classes
+            </div>
+        </div>
+        <hr style="width: 50%; text-align: left; margin-left: 0">
+        <div>
+            remove added classes
+        </div>
+
+    </fieldset>
+</body>
+</html>

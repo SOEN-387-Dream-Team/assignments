@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+      }
+      .row{
+        content:"";
+        clear: both;
+        display: table;
+      }
+      @media screen and (max-width: 300px) {
+        .column{
+          width: 100%;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <h1>Connect</h1>
+    <p>Connect as a Student or an Administrator</p>
+
+    <div class="row">
+      <div class="column">
+        <form id="studentbutton" action="StudentPage.html" style="width:100%">
+          <input type="submit" value="Student"/>
+        </form>
+      </div>
+
+      <div class="column">
+        <form id="adminbutton" action="AdminPage.html" style="width:100%">
+          <input type="submit" value="Administrator"/>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
