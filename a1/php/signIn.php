@@ -1,15 +1,10 @@
 <?php
-include('./conn.php');
-include('./functions.php');
+require_once("conn.php");
 session_start();
 
-  // Call login function when button is clicked
-  if (isset($_POST['login_button'])) {
-    login();
-  }
+if (isset($_POST['login_button'])) {
 
-function login() {
-  global $username, $errors;
+  global $username, $errors, $conn;
 
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -20,16 +15,19 @@ function login() {
  }
 
   if (count($errors) == 0) {
+   $sql = "SELECT * FROM user WHERE id=? AND password=?";
+   $stmt = $conn->prepare($sql);
+   $stmt->bind_param("is", $username, $password); // Query database using username and password
+   $stmt->execute();
+   $result = $stmt->get_result();
 
-   $query = ""; // Query database using username and password
-   $result = perform_query($query);
 
-   if (mysqli_num_rows($results) == 1) { // user found
+   if ($result->num_rows > 0) { // user found
      $_SESSION['success']  = true;
-     $logged_in_user = mysqli_fetch_assoc($result);
+     $logged_in_user = $result->fetch_assoc();
      $_SESSION['user'] = $logged_in_user;
      // check if user is admin or user
-     if ($logged_in_user['isAdmin'] == 'admin') {
+     if ($logged_in_user['isAdmin'] === TRUE) {
        header('location: ../html/AdminOptions.html');
       } else{
        header('location: ../html/StudentOptions.html');

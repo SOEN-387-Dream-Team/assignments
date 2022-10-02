@@ -2,7 +2,7 @@
 include('./conn.php');
 
 function create_course($code, $title, $semester, $days, $time, $instructor, $room, $start, $end) {
-  $query = "";
+  $query = "INSERT INTO Courses VALUES ($code, $title, $semester, $days, $time, $instructor, $room, $start, $end)";
   // Perform Query
   $result = perform_query($query);
 
