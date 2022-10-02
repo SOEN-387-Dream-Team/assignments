@@ -2,13 +2,13 @@
 $server = "localhost";
 $userName = "root";
 $password = "root";
-$db = "soen387_school";
-$mysqli = new mysqli($server,$userName,$password,$db);
+$db = "soen387school";
+
+$conn = mysqli_connect($server,$userName,$password,$db);
 
 // Check connection
-if ($mysqli -> connect_errno) {
-  echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-  exit();
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
+
 ?>
