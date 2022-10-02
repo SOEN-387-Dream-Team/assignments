@@ -23,24 +23,29 @@
         }
       }
     </style>
+    <script type="text/javascript" src="../js/Validation.js"></script>
 </head>
 
 <body>
-    <h1>Connect</h1>
-    <p>Connect as a Student or an Administrator</p>
-
-    <div class="row">
-      <div class="column">
-        <form id="studentbutton" action="StudentPage.html" style="width:100%">
-          <input type="submit" value="Student"/>
+<div class="row">
+    <fieldset>
+        <legend><h2>Connect</h2></legend>
+        <h3>Login into your Student or Administrator account.</h3>
+        <p>Enter your ID & password.</p>
+        <form>
+            <ol>
+                <li>
+                    <label for="userId">User ID<em>*</em></label>
+                    <input id="userId" name="userId" type="text" placeholder="Enter your User ID" required onkeyup="validateID()"/>
+                </li>
+                <li>
+                    <label for="password">Password<em>*</em></label>
+                    <input id="password" name="password" type="text" placeholder="Enter your Password" required onkeyup="validatePass()"/>
+                </li>
+            </ol>
+            <button >Login</button>
         </form>
-      </div>
-
-      <div class="column">
-        <form id="adminbutton" action="AdminPage.html" style="width:100%">
-          <input type="submit" value="Administrator"/>
-        </form>
-      </div>
-    </div>
+    </fieldset>
+</div>
 </body>
 </html>
