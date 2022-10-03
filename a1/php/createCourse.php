@@ -1,29 +1,27 @@
 <?php
-include('conn.php');
-global $conn;
+require_once('conn.php');
+if (isset($_POST['create_course_button'])) { // TODO: Change with respective html form name
 
-if (isset($_POST['create_course_button'])) {
   $code = $_POST['code'];
   $title = $_POST['title'];
   $semester = $_POST['semester'];
-  $days = $_POST['days'];
-  $time = $_POST['time'];
-  $instructor = $_POST['instructor'];
   $room = $_POST['room'];
   $start = $_POST['start'];
   $end = $_POST['end'];
+  $days = $_POST['days'];
+  $time = $_POST['time'];
+  $instructor = $_POST['instructor'];
 
   $sql = "INSERT INTO courses VALUES(?,?,?,?,?,?,?,?,?)";
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("sssssssss", $code, $title, $semester, $days, $time, $instructor, $room, $start, $end);
+  $stmt->bind_param("sssssssss", $code, $title, $semester, $room, $start, $end, $days, $time, $instructor);
 
-  if ($stmt->execute()) { // course created successfully
+  if ($stmt->execute()) {
     echo "Course " . $title . " created successfully";
-    sleep(3);
-    header('location: ../html/AdminOptions.html')
-  }
-  else{
+  } else {
+    echo $stmt->error;
     echo "Something went wrong. Could not create course";
   }
+  header("Refresh:5; url=../html/AdminPage.html");
 }
 ?>

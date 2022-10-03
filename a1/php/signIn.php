@@ -28,9 +28,9 @@ if (isset($_POST['login_button'])) {
      $_SESSION['user'] = $logged_in_user;
      // check if user is admin or user
      if ($logged_in_user['isAdmin'] === TRUE) {
-       header('location: ../html/AdminOptions.html');
+       header('location: ../html/AdminPage.html');
       } else{
-       header('location: ../html/StudentOptions.html');
+       header('location: ../html/StudentPage.html');
       }
    } else {
     array_push($errors, "Wrong username/password combination");

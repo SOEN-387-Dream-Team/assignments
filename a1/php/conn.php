@@ -2,9 +2,9 @@
 $server = "localhost";
 $userName = "root";
 $password = "root";
-$db = "lol";
+$db = "soen387_school";
 
-static $conn = new mysqli($server,$userName,$password,$db);
+$conn = new mysqli($server,$userName,$password,$db);
 
 // Check connection
 if ($conn->connect_error) {
