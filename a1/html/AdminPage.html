@@ -49,7 +49,7 @@
 
 <!--Course Report Popup-->
     <div class="form-popup" id="coursePopup">
-        <form action="" class="form-container" onsubmit="return validateCode()" method="post">
+        <form action="../php/courseReport.php" class="form-container" onsubmit="return validateCode()" method="post">
             <h2>Course Report</h2>
             <p>Enter a Course Code to view all Students registered to this course.</p>
             <label for="courseCode">Course Code</label>
@@ -57,14 +57,14 @@
 
             <p>List of students</p>
 
-            <button type="submit" class="btn">Submit</button>
+            <input type="submit" class="btn" value="Submit"/>
             <button type="button" class="btn cancel" onclick="closeCourseForm()">Cancel</button>
         </form>
     </div>
 
 <!--Student Report Popup-->
     <div class="form-popup" id="studentPopup">
-        <form action="" class="form-container" onsubmit="return validateStudent()" method="post">
+        <form action="../php/studentReport.php" class="form-container" onsubmit="return validateStudent()" method="post">
             <h2>Student's Course Report</h2>
             <p>Enter a Student's name (First & Last Name) to view all Courses the Student is registered in.</p>
             <label for="studentName">Student's Full Name</label>
@@ -72,14 +72,14 @@
 
             <p>List of courses</p>
 
-            <button type="submit" class="btn">Submit</button>
+            <input type="submit" class="btn" value="Submit"/>
             <button type="button" class="btn cancel" onclick="closeStudentForm()">Cancel</button>
         </form>
     </div>
 
 <!--New Course Report-->
     <div class="form-popup" id="newPopup">
-        <form action="" class="form-container" onsubmit="return ">
+        <form action="../php/createCourse.php" class="form-container" onsubmit="return " method="post">
             <fieldset>
                 <legend>Course Creation</legend>
                 <p>Enter the information for a new Course.</p>
@@ -155,7 +155,7 @@
                     </li>
                 </ul>
             </fieldset>
-            <button type="submit" class="btn">Submit</button>
+            <input type="submit" class="btn" value="Submit"/>
             <button type="button" class="btn cancel" onclick="closeNewForm()">Cancel</button>
         </form>
     </div>

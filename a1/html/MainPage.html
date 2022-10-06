@@ -32,7 +32,7 @@
         <legend><h2>Connect</h2></legend>
         <h3>Login into your Student or Administrator account.</h3>
         <p>Enter your ID & password.</p>
-        <form>
+        <form action="../php/signIn.php" method="post">
             <ol>
                 <li>
                     <label for="userId">User ID<em>*</em></label>
@@ -43,7 +43,7 @@
                     <input id="password" name="password" type="text" placeholder="Enter your Password" required onkeyup="validatePass()"/>
                 </li>
             </ol>
-            <button >Login</button>
+            <input type="submit" value="Login"/>
         </form>
     </fieldset>
 </div>
