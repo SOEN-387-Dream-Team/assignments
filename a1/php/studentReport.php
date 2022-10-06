@@ -5,7 +5,11 @@
     { 
         $student = $_POST['studentID'];
 
-        $sql = "SELECT courseCode FROM student_courses WHERE id=$student";
+        $sql = "SELECT DISTINCT s.courseCode c.title 
+                FROM student_courses s
+                JOIN courses c
+                ON s.courseCode = c.courseCode
+                WHERE s.id=$student";
 
         $result = $conn->query($sql);
 
