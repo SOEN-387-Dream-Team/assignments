@@ -1,7 +1,7 @@
 <?php   
 
     require_once('conn.php');
-    if (isset($_POST['course_report_button'])) // TODO: Change with respective html form name
+    if (isset($_POST['courseReport']))
     { 
         $course = $_POST['courseID'];
 
