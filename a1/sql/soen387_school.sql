@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2022 at 01:20 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Oct 10, 2022 at 01:09 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `soen387_school`
 --
-CREATE DATABASE IF NOT EXISTS `soen387_school` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `soen387_school`;
 
 -- --------------------------------------------------------
 
@@ -36,7 +34,7 @@ CREATE TABLE `courses` (
   `room` varchar(255) NOT NULL,
   `startDate` date NOT NULL,
   `endDate` date NOT NULL,
-  `days` int(11) NOT NULL,
+  `days` varchar(255) NOT NULL,
   `time` time NOT NULL,
   `instructor` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -46,14 +44,14 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`courseCode`, `title`, `semester`, `room`, `startDate`, `endDate`, `days`, `time`, `instructor`) VALUES
-('COMP232', 'Mathematics for Computer Science', 'winter2022', 'H640', '2022-01-05', '2022-04-30', 20, '08:30:00', 'Jane A'),
-('COMP233', 'Probability and Statistics for Computer Science', 'winter2022', 'H543', '2022-01-05', '2022-04-30', 32, '19:30:10', 'Samuel J'),
-('COMP248', 'Object‑Oriented Programming I ', 'winter2022', 'H843', '2022-01-05', '2022-04-10', 42, '10:30:00', 'Richard J'),
-('COMP326', 'Computer Architecture', 'fall2024', 'H925', '2022-09-06', '2022-12-31', 42, '10:30:00', 'Richard J'),
-('COMP333', 'Data Analytics', 'winter2022', 'H525', '2022-01-05', '2022-04-30', 45, '13:00:00', 'Matthew R'),
-('COMP335', 'Introduction to Theoretical Computer Science', 'winter2022', 'H605', '2022-01-05', '2022-04-30', 12, '14:00:00', 'Allison D'),
-('COMP348', 'Principles of Programming Languages', 'summer2023', 'H725', '2022-05-01', '2022-08-31', 20, '18:00:00', 'Lisa E'),
-('COMP352', 'Data Structures and Algorithms', 'summer2023', 'H925', '2022-05-01', '2022-08-31', 20, '16:00:00', 'Rebecca MJ');
+('COMP232', 'Mathematics for Computer Science', 'winter2022', 'H640', '2022-01-05', '2022-04-30', '', '08:30:00', 'Jane A'),
+('COMP233', 'Probability and Statistics for Computer Science', 'winter2022', 'H543', '2022-01-05', '2022-04-30', '', '19:30:10', 'Samuel J'),
+('COMP248', 'Object‑Oriented Programming I ', 'winter2022', 'H843', '2022-01-05', '2022-04-10', '', '10:30:00', 'Richard J'),
+('COMP326', 'Computer Architecture', 'fall2024', 'H925', '2022-09-06', '2022-12-31', '', '10:30:00', 'Richard J'),
+('COMP333', 'Data Analytics', 'winter2022', 'H525', '2022-01-05', '2022-04-30', '', '13:00:00', 'Matthew R'),
+('COMP335', 'Introduction to Theoretical Computer Science', 'winter2022', 'H605', '2022-01-05', '2022-04-30', '', '14:00:00', 'Allison D'),
+('COMP348', 'Principles of Programming Languages', 'summer2023', 'H725', '2022-05-01', '2022-08-31', '', '18:00:00', 'Lisa E'),
+('COMP352', 'Data Structures and Algorithms', 'summer2023', 'H925', '2022-05-01', '2022-08-31', '', '16:00:00', 'Rebecca MJ');
 
 -- --------------------------------------------------------
 
