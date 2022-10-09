@@ -1,3 +1,21 @@
+function openDropCourse(){
+    document.getElementById("dropPopup").style.display = "block";
+    document.getElementById("addPopup").style.display = "none";
+}
+
+function openAddCourse(){
+    document.getElementById("addPopup").style.display = "block";
+    document.getElementById("dropPopup").style.display = "none";
+}
+
+function closeDropCourse(){
+    document.getElementById("dropPopup").style.display = "none";
+}
+
+function closeAddCourse(){
+    document.getElementById("addPopup").style.display = "none";
+}
+
 let expanded = false;
 function showCheckboxes() {
     const checkboxes = document.getElementById("checkboxes");

@@ -34,6 +34,7 @@
     </style>
     <link rel="stylesheet" href="../css/StudentPageStyle.css">
     <script type="text/javascript" src="../js/StudentOptions.js"></script>
+    <script type="text/javascript" src="../js/Validation.js"></script>
 </head>
 
 <body>
@@ -44,7 +45,7 @@
         <p>Welcome, Student's First name & last name!</p>
         <hr style="width: 80%; text-align: left; margin-left: 0">
         <div>
-            <form action="../php/registerCourse.php" id="courses" name="courses" method="post">
+            <!--<form action="../php/registerCourse.php" id="courses" name="courses" method="post">
                 <div class="multiselect">
                     <div class="selectBox" onclick="showCheckboxes()">
                         <select>
@@ -69,15 +70,59 @@
                             <input class="check" name="checkCourse" type="checkbox" id="encs393" value="ENCS393" />ENCS393</label>
                     </div>
 
-                    <script>limitCheckbox()</script>
+                    <script>limitCheckbox()</script>-->
                     <p>Maximum of 5 courses.</p>
 
                     <hr style="width: 80%; text-align: left; margin-left: 0">
-
-                    <button id="select-courses" type="submit">Add Classes</button>
+                    <div class="button-group">
+                        <span class="inline">
+                            <form id="addReport" onclick="openAddCourse()" style="width:100%">
+                                <input type="button" value="Add Courses"/>
+                            </form>
+                        </span>
+                        <span class="inline">
+                            <form id="dropReport" onclick="openDropCourse()" style="width:100%">
+                                <input type="button" value="Drop Courses"/>
+                            </form>
+                        </span>
+                    </div>
                 </div>
-            </form>
+            <!--</form>-->
         </div>
+    </div>
+    <!--drop course popup-->
+    <div class="form-popup" id="dropPopup">
+        <form action="" class="form-container" onsubmit="return validateDropCode()" method="post">
+            <h2>Drop a Class</h2>
+            <p>TODO : Add an instructional message.</p>
+            <label>List of Enrolled classes</label>
+            <textarea readonly>--list of enrolled courses--</textarea>
+
+            <p></p>
+            <label for="dropCode">Input a course code from the list above & submit to drop it from your course list.</label><br>
+            <input type="text" placeholder="Course Code" id="dropCode" maxlength="7" size="7" required onfocusout="validateDropCode()">
+
+            <p></p>
+            <button type="submit" class="btn" value="Submit">Submit</button>
+            <button type="button" class="btn cancel" onclick="closeDropCourse()">Cancel</button>
+        </form>
+    </div>
+    <!--add course popup-->
+    <div class="form-popup" id="addPopup">
+        <form action="" class="form-container" onsubmit="return validateAddCode()" method="post">
+            <h2>Add a Class</h2>
+            <p>TODO : Add an instructional message.</p>
+            <label>List of Un-enrolled classes</label>
+            <textarea readonly>--list of un-enrolled courses--</textarea>
+
+            <p></p>
+            <label for="addCode">Input a course code from the list above & submit to add it to your course list.</label><br>
+            <input type="text" placeholder="Course Code" id="addCode" maxlength="7" size="7" required onfocusout="validateAddCode()">
+
+            <p></p>
+            <button type="submit" class="btn" value="Submit">Submit</button>
+            <button type="button" class="btn cancel" onclick="closeAddCourse()">Cancel</button>
+        </form>
     </div>
 </div>
 </body>

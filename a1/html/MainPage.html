@@ -17,10 +17,10 @@
         <p>Enter your User ID & password.</p>
         <form action="../php/signIn.php" method="post">
             <div class="input-group">
-                <input class="input-text" id="userId" name="userId" type="text" required onkeyup="validateID()" placeholder="Enter your User ID."/>
+                <input class="input-text" id="userId" name="userId" type="text" required onfocusout="validateID()" placeholder="Enter your User ID."/>
             </div>
             <div class="input-group">
-                <input class="input-text" id="password" name="password" type="text" required onkeyup="validatePass()" placeholder="Enter your User Password."/>
+                <input class="input-text" id="password" name="password" type="text" required onfocusout="validatePass()" placeholder="Enter your User Password."/>
             </div>
             <button type="submit">Login</button>
         </form>
