@@ -32,14 +32,17 @@
             background-color: #1e90ff;
         }
     </style>
+    <link rel="stylesheet" href="../css/StudentPageStyle.css">
     <script type="text/javascript" src="../js/StudentOptions.js"></script>
 </head>
 
 <body>
-    <fieldset>
-        <legend><h2>Student Page</h2></legend>
+<div class="box">
+    <div class="inner">
+        <h1>Student Page</h1>
+        <hr style="width: 100%; text-align: left; margin-left: 0">
         <p>Welcome, Student's First name & last name!</p>
-        <hr style="width: 50%; text-align: left; margin-left: 0">
+        <hr style="width: 80%; text-align: left; margin-left: 0">
         <div>
             <form action="../php/registerCourse.php" id="courses" name="courses" method="post">
                 <div class="multiselect">
@@ -69,12 +72,13 @@
                     <script>limitCheckbox()</script>
                     <p>Maximum of 5 courses.</p>
 
-                    <hr style="width: 50%; text-align: left; margin-left: 0">
+                    <hr style="width: 80%; text-align: left; margin-left: 0">
 
                     <button id="select-courses" type="submit">Add Classes</button>
                 </div>
             </form>
         </div>
-    </fieldset>
+    </div>
+</div>
 </body>
 </html>

@@ -3,49 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Main Page</title>
-    <style>
-      *{
-        box-sizing: border-box;
-      }
-      .column {
-        float: left;
-        width: 33.33%;
-        padding: 5px;
-      }
-      .row{
-        content:"";
-        clear: both;
-        display: table;
-      }
-      @media screen and (max-width: 300px) {
-        .column{
-          width: 100%;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="../css/MainPageStyle.css">
     <script type="text/javascript" src="../js/Validation.js"></script>
+
 </head>
 
 <body>
-<div class="row">
-    <fieldset>
-        <legend><h2>Connect</h2></legend>
+<div class="row box">
+    <div class="inner">
+        <h1>Connect</h1>
+        <hr style="width:100%; text-align: left; margin-left: 0">
         <h3>Login into your Student or Administrator account.</h3>
-        <p>Enter your ID & password.</p>
+        <p>Enter your User ID & password.</p>
         <form action="../php/signIn.php" method="post">
-            <ol>
-                <li>
-                    <label for="userId">User ID<em>*</em></label>
-                    <input id="userId" name="userId" type="text" placeholder="Enter your User ID" required onkeyup="validateID()"/>
-                </li>
-                <li>
-                    <label for="password">Password<em>*</em></label>
-                    <input id="password" name="password" type="text" placeholder="Enter your Password" required onkeyup="validatePass()"/>
-                </li>
-            </ol>
-            <input type="submit" value="Login"/>
+            <div class="input-group">
+                <input class="input-text" id="userId" name="userId" type="text" required onkeyup="validateID()" placeholder="Enter your User ID."/>
+            </div>
+            <div class="input-group">
+                <input class="input-text" id="password" name="password" type="text" required onkeyup="validatePass()" placeholder="Enter your User Password."/>
+            </div>
+            <button type="submit">Login</button>
         </form>
-    </fieldset>
+    </div>
 </div>
 </body>
 </html>

@@ -3,32 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Administrator Options</title>
-    <style>
-        body {
-            overflow-y : scroll;
-        }
-
-        .inline {
-            display: inline-block;
-        }
-        .form-popup {
-            display: none;
-            border: 3px solid #f1f1f1;
-            width : 500px;
-            height : 650px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/AdminPageStyle.css">
     <script type="text/javascript" src="../js/AdminOptions.js"></script>
     <script type="text/javascript" src="../js/Validation.js"></script>
 </head>
 <body>
 <!--main page-->
-    <fieldset>
-        <legend><h2>Administrator Information</h2></legend>
+<div class="box">
+    <div class="inner">
+        <h1>Administrator Information</h1>
+        <hr style="width: 100%; text-align: left; margin-left: 0">
         <p>Welcome, Admin First Name & Last Name!</p>
         <hr style="width: 50%; text-align: left; margin-left: 0">
         <!--main buttons-->
-        <div>
+        <div class="button-group">
             <span class="inline">
                 <form id="courseReport" onclick="openCourseForm()" style="width:100%">
                     <input type="button" value="Course Report"/>
@@ -45,7 +33,7 @@
                 </form>
             </span>
         </div>
-    </fieldset>
+    </div>
 
 <!--Course Report Popup-->
     <div class="form-popup" id="coursePopup">
@@ -57,7 +45,7 @@
 
             <p>List of students</p>
 
-            <input type="submit" class="btn" value="Submit"/>
+            <button type="submit" class="btn" value="Submit">Submit</button>
             <button type="button" class="btn cancel" onclick="closeCourseForm()">Cancel</button>
         </form>
     </div>
@@ -72,7 +60,7 @@
 
             <p>List of courses</p>
 
-            <input type="submit" class="btn" value="Submit"/>
+            <button type="submit" class="btn" value="Submit">Submit</button>
             <button type="button" class="btn cancel" onclick="closeStudentForm()">Cancel</button>
         </form>
     </div>
@@ -155,10 +143,11 @@
                     </li>
                 </ul>
             </fieldset>
-            <input type="submit" class="btn" value="Submit"/>
+            <button type="submit" class="btn" value="Submit">Submit</button>
+
             <button type="button" class="btn cancel" onclick="closeNewForm()">Cancel</button>
         </form>
     </div>
-
+</div>
 </body>
 </html>
