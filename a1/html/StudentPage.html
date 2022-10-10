@@ -117,10 +117,10 @@
             
             <p></p>
             <label for="addCode">Input a course code from the list above & submit to add it to your course list.</label><br>
-            <input type="text" placeholder="Course Code" id="addCode" maxlength="7" size="7" required onfocusout="validateAddCode()">
+            <input type="text" placeholder="Course Code" name="addCode" id="addCode" maxlength="7" size="7" required onfocusout="validateAddCode()">
 
             <p></p>
-            <button type="submit" class="btn" value="Submit">Submit</button>
+            <button name = "addCourse" type="submit" class="btn" value="Submit">Submit</button>
             <button type="button" class="btn cancel" onclick="closeAddCourse()">Cancel</button>
         </form>
     </div>
