@@ -95,8 +95,8 @@
         <form action="" class="form-container" onsubmit="return validateDropCode()" method="post">
             <h2>Drop a Class</h2>
             <p>TODO : Add an instructional message.</p>
-            <label>List of Enrolled classes</label>
-            <textarea readonly>--list of enrolled courses--</textarea>
+            <label for="dropList">List of Enrolled classes</label>
+            <textarea id="dropList" readonly>--list of enrolled courses--</textarea>
 
             <p></p>
             <label for="dropCode">Input a course code from the list above & submit to drop it from your course list.</label><br>
@@ -112,8 +112,8 @@
         <form action="" class="form-container" onsubmit="return validateAddCode()" method="post">
             <h2>Add a Class</h2>
             <p>TODO : Add an instructional message.</p>
-            <label>List of Un-enrolled classes</label>
-            <textarea readonly>--list of un-enrolled courses--</textarea>
+            <label for="addList">List of Un-enrolled classes</label>
+            <textarea id="addList" readonly>--list of un-enrolled courses--</textarea>
 
             <p></p>
             <label for="addCode">Input a course code from the list above & submit to add it to your course list.</label><br>
@@ -124,6 +124,5 @@
             <button type="button" class="btn cancel" onclick="closeAddCourse()">Cancel</button>
         </form>
     </div>
-</div>
 </body>
 </html>
