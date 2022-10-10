@@ -2,7 +2,7 @@
 require_once("conn.php");
 session_start();
 
-if (isset($_POST['login_btn'])) {
+//if (isset($_POST['login_btn'])) {
 
   $username = $_POST['userId'];
   $password = $_POST['password'];
@@ -33,5 +33,6 @@ if (isset($_POST['login_btn'])) {
    } else {
     header('location: ../html/MainPage.html');
    }
-}
+  //}
+
 ?>
