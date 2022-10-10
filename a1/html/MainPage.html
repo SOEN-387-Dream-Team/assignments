@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,3 +29,35 @@
 </div>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="../css/MainPageStyle.css">
+    <script type="text/javascript" src="../js/Validation.js"></script>
+
+</head>
+
+<body>
+<div class="row box">
+    <div class="inner">
+        <h1>Connect</h1>
+        <hr style="width:100%; text-align: left; margin-left: 0">
+        <h3>Login into your Student or Administrator account.</h3>
+        <p>Enter your User ID & password.</p>
+        <form action="../php/signIn.php" method="post">
+            <div class="input-group">
+                <input class="input-text" id="userId" name="userId" type="text" required onfocusout="validateID()" placeholder="Enter your User ID."/>
+            </div>
+            <div class="input-group">
+                <input class="input-text" id="password" name="password" type="text" required onfocusout="validatePass()" placeholder="Enter your User Password."/>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+>>>>>>> 96d5838aedd5c780a51b774f491d6b8fa50ff750
