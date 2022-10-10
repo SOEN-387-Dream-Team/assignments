@@ -3,7 +3,7 @@ require_once('conn.php');
 if (isset($_POST['create_course_btn'])) {
 
   foreach ($_POST as $key => $value) {
-     echo $key . $value
+     echo $key . $value;
  }
 
   $code = $_POST['code'];
