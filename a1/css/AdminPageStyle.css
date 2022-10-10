@@ -1,0 +1,54 @@
+body {
+    overflow-y : scroll;
+    background-color: lavender;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.form-popup {
+    display: none;
+    margin: auto;
+    border: 3px solid #f1f1f1;
+    padding-left: 15px;
+    padding-right: 5px;
+    width : 500px;
+    height : 700px;
+}
+
+.box {
+    background-color: ghostwhite;
+    margin: 20px auto;
+    min-height: 200px;
+    width: 600px;
+    border: 1px darkgrey;
+}
+
+.inner {
+    text-align: Left;
+    padding: 50px 30px 60px;
+    box-shadow: 3px 1.732px 10px 0px rgba(0, 0, 0, 0.063);
+}
+
+h1, h2{
+    color: rebeccapurple;
+}
+
+button {
+    background-color: lightgray;
+    border: 1px solid black;
+    color: indigo;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    float: bottom;
+}
+
+button:hover {
+    background-color: dimgray;
+}
+
+
