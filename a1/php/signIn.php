@@ -2,16 +2,14 @@
 require_once("conn.php");
 session_start();
 
-if (isset($_POST['login_button'])) {
+if (isset($_POST['login_btn'])) {
 
-  global $username, $errors, $conn;
-
-  $username = $_POST['username'];
+  $username = $_POST['userId'];
   $password = $_POST['password'];
 
   // make sure form is filled
   if (empty($username) || empty($password)) {
-   array_push($errors, "Username/password are required");
+   header('location: ../html/MainPage.html');
  }
 
   if (count($errors) == 0) {
@@ -27,13 +25,13 @@ if (isset($_POST['login_button'])) {
      $logged_in_user = $result->fetch_assoc();
      $_SESSION['user'] = $logged_in_user;
      // check if user is admin or user
-     if ($logged_in_user['isAdmin'] === TRUE) {
+     if ($logged_in_user['isAdmin'] === 1) {
        header('location: ../html/AdminPage.html');
-      } else{
+     } else if ($logged_in_user['isAdmin'] === 0){
        header('location: ../html/StudentPage.html');
       }
    } else {
-    array_push($errors, "Wrong username/password combination");
+    header('location: ../html/MainPage.html');
    }
   }
 }
