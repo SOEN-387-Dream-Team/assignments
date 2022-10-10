@@ -12,7 +12,6 @@ if (isset($_POST['login_btn'])) {
    header('location: ../html/MainPage.html');
  }
 
-  if (count($errors) == 0) {
    $sql = "SELECT * FROM user WHERE id=? AND password=?";
    $stmt = $conn->prepare($sql);
    $stmt->bind_param("is", $username, $password); // Query database using username and password
