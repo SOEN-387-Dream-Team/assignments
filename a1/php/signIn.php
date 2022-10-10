@@ -33,6 +33,5 @@ if (isset($_POST['login_btn'])) {
    } else {
     header('location: ../html/MainPage.html');
    }
-  }
 }
 ?>
