@@ -24,6 +24,7 @@ if (isset($_POST['login_btn'])) {
      $_SESSION['success']  = true;
      $logged_in_user = $result->fetch_assoc();
      $_SESSION['user'] = $logged_in_user;
+     $_SESSION['id'] = $logged_in_user['id'];
      // check if user is admin or user
      if ($logged_in_user['isAdmin'] === 1) {
        header('location: ../html/AdminPage.html');

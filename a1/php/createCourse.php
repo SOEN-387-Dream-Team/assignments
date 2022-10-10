@@ -1,6 +1,10 @@
 <?php
 require_once('conn.php');
-if (isset($_POST['create_course_button'])) { // TODO: Change with respective html form name
+if (isset($_POST['create_course_btn'])) {
+
+  foreach ($_POST as $key => $value) {
+     echo $key . $value
+ }
 
   $code = $_POST['code'];
   $title = $_POST['title'];

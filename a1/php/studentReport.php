@@ -1,11 +1,11 @@
-<?php   
+<?php
 
     require_once('conn.php');
     if (isset($_POST['studentReport']))
-    { 
+    {
         $student = $_POST['studentID'];
 
-        $sql = "SELECT DISTINCT s.courseCode c.title 
+        $sql = "SELECT DISTINCT s.courseCode, c.title 
                 FROM student_courses s
                 JOIN courses c
                 ON s.courseCode = c.courseCode
@@ -27,6 +27,6 @@
             echo "No records found.";
         }
     }
-    
+
 
 ?>

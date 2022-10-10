@@ -91,7 +91,7 @@
         </div>
     </div>
     <!--drop course popup-->
-    <div class="form-popup" id="dropPopup">
+    <div class="form" id="dropPopup">
         <form action="" class="form-container" onsubmit="return validateDropCode()" method="post">
             <h2>Drop a Class</h2>
             <p>TODO : Add an instructional message.</p>
@@ -108,13 +108,13 @@
         </form>
     </div>
     <!--add course popup-->
-    <div class="form-popup" id="addPopup">
+    <div class="form" id="addPopup">
         <form action="" class="form-container" onsubmit="return validateAddCode()" method="post">
             <h2>Add a Class</h2>
             <p>TODO : Add an instructional message.</p>
             <label for="addList">List of Un-enrolled classes</label>
             <textarea id="addList" readonly>--list of un-enrolled courses--</textarea>
-
+            
             <p></p>
             <label for="addCode">Input a course code from the list above & submit to add it to your course list.</label><br>
             <input type="text" placeholder="Course Code" id="addCode" maxlength="7" size="7" required onfocusout="validateAddCode()">

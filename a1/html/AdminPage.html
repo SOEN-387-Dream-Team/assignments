@@ -67,7 +67,7 @@
 
 <!--New Course Report-->
     <div class="form-popup" id="newPopup">
-        <form action="../php/createCourse.php" onsubmit="return validateNewCourse()" method="post">
+        <form action="../php/createCourse.php"  method="post">
             <fieldset>
                 <h2>Course Creation</h2>
                 <p>Enter the information for a new Course.</p>
@@ -139,7 +139,7 @@
                     </li>
                 </ul>
             </fieldset>
-            <button type="submit" class="btn" value="Submit">Submit</button>
+            <button type="submit" class="btn" name="create_course_button" value="Submit">Submit</button>
             <button type="button" class="btn cancel" onclick="closeNewForm()">Cancel</button>
         </form>
     </div>
