@@ -2,8 +2,6 @@
 require_once("conn.php");
 session_start();
 
-//if (isset($_POST['login_btn'])) {
-
   $username = $_POST['userId'];
   $password = $_POST['password'];
 
@@ -33,6 +31,5 @@ session_start();
    } else {
     header('location: ../html/MainPage.html');
    }
-  //}
 
 ?>
