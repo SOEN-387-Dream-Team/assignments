@@ -16,12 +16,13 @@
         $stmt->execute();
         $result = $stmt->get_result();
 
+        //Display of the results
+        include 'header.php';
+        echo "<body>";        
+        echo "<div class='container text-center'>";
         if($result->num_rows > 0)
         {
-            //Display of the results
-            include 'header.php';
-            echo "<body>";
-            echo "<div class='container text-center'>";
+            //Display of the results (continued)
                 echo "<div class='row'>";
                     echo "<div class='col'>";
                     echo "<h1>" . strtoupper($course) . " Course Report</h1>";
@@ -49,22 +50,20 @@
                 echo "</tr>";
             }
 
-            echo "</table>";
-                echo "<div class='row'>";
-                    echo "<div class='col'>";
-                        echo "<a href='../html/AdminPage.html'><button type='button' class='btn btn-primary'>Close Report</button></a>";
-                    echo "</div>";
-                echo "</div>";
-            
+                echo "</table>";                    
         }
         else
         {
-            echo "
-            <div class='alert alert-danger' role='alert'>
-                No records found
-            </div>";
+            echo "<p class='alert alert-danger'>";
+            echo "No student records found for Course " .  strtoupper($course);
+            echo "</p>";
         }
-        echo "</div>";
+            echo "<div class='row'>";
+                            echo "<div class='col'>";
+                                echo "<a href='../html/AdminPage.html'><button type='button' class='btn btn-primary'>Close Report</button></a>";
+                            echo "</div>";
+                        echo "</div>";
+        echo "</div>";//end of container
         include 'footer.php';        
     }
 
