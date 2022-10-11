@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2022 at 01:09 AM
+-- Generation Time: Oct 11, 2022 at 07:59 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -44,14 +44,14 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`courseCode`, `title`, `semester`, `room`, `startDate`, `endDate`, `days`, `time`, `instructor`) VALUES
-('COMP232', 'Mathematics for Computer Science', 'winter2022', 'H640', '2022-01-05', '2022-04-30', '', '08:30:00', 'Jane A'),
-('COMP233', 'Probability and Statistics for Computer Science', 'winter2022', 'H543', '2022-01-05', '2022-04-30', '', '19:30:10', 'Samuel J'),
-('COMP248', 'Object‑Oriented Programming I ', 'winter2022', 'H843', '2022-01-05', '2022-04-10', '', '10:30:00', 'Richard J'),
-('COMP326', 'Computer Architecture', 'fall2024', 'H925', '2022-09-06', '2022-12-31', '', '10:30:00', 'Richard J'),
-('COMP333', 'Data Analytics', 'winter2022', 'H525', '2022-01-05', '2022-04-30', '', '13:00:00', 'Matthew R'),
-('COMP335', 'Introduction to Theoretical Computer Science', 'winter2022', 'H605', '2022-01-05', '2022-04-30', '', '14:00:00', 'Allison D'),
-('COMP348', 'Principles of Programming Languages', 'summer2023', 'H725', '2022-05-01', '2022-08-31', '', '18:00:00', 'Lisa E'),
-('COMP352', 'Data Structures and Algorithms', 'summer2023', 'H925', '2022-05-01', '2022-08-31', '', '16:00:00', 'Rebecca MJ');
+('COMP232', 'Mathematics for Computer Science', 'FALL-2022', 'H640', '2022-10-09', '2022-12-31', 'Monday', '08:30:00', 'Jane A'),
+('COMP233', 'Probability and Statistics for Computer Science', 'FALL-2022', 'H543', '2022-10-09', '2022-12-31', 'Monday', '19:30:10', 'Samuel J'),
+('COMP248', 'Object‑Oriented Programming I ', 'FALL-2022', 'H843', '2022-10-09', '2022-12-31', 'Tuesday', '10:30:00', 'Richard J'),
+('COMP326', 'Computer Architecture', 'FALL-2022', 'H925', '2022-10-09', '2022-12-31', 'Wednesday', '10:30:00', 'Richard J'),
+('COMP333', 'Data Analytics', 'FALL-2022', 'H525', '2022-10-09', '2022-12-31', 'Wednesday', '13:00:00', 'Matthew R'),
+('COMP335', 'Introduction to Theoretical Computer Science', 'FALL-2022', 'H605', '2022-10-09', '2022-12-31', 'Friday', '14:00:00', 'Allison D'),
+('COMP348', 'Principles of Programming Languages', 'SUMMER1-2023', 'H725', '2022-05-01', '2022-08-31', 'Friday', '18:00:00', 'Lisa E'),
+('COMP352', 'Data Structures and Algorithms', 'SUMMER1-2023', 'H925', '2022-05-01', '2022-08-31', 'Thursday', '16:00:00', 'Rebecca MJ');
 
 -- --------------------------------------------------------
 
@@ -74,8 +74,9 @@ INSERT INTO `student_courses` (`id`, `courseCode`) VALUES
 (4, 'COMP248'),
 (4, 'COMP326'),
 (4, 'COMP333'),
-(4, 'COMP335'),
+(4, 'COMP348'),
 (4, 'COMP352'),
+(6, 'COMP232'),
 (6, 'COMP333');
 
 -- --------------------------------------------------------
