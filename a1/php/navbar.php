@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item p-1">
-            <a class="nav-link" href="../html/StudentPage.html">Student Page</a>
+            <a class="nav-link" href="../html/StudentPage.php">Student Page</a>
             </li>
             <li class="nav-item p-1">
             <a class="nav-link" href="../html/AdminPage.php">Admin Page</a>

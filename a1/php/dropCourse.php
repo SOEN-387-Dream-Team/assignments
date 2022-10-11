@@ -47,6 +47,6 @@ if (isset($_POST['drop_course_btn'])) {
         echo "Requirements for course drop not met: You have passed the deadline to drop this course.";
     }
   }
-  header("Refresh:5; url=../html/StudentPage.html");
+  header("Refresh:5; url=../html/StudentPage.php");
 }
 ?>

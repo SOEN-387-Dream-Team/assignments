@@ -27,7 +27,7 @@ session_start();
      if ($logged_in_user['isAdmin'] === 1) {
        header('location: ../html/AdminPage.php');
      } else if ($logged_in_user['isAdmin'] === 0){
-       header('location: ../html/StudentPage.html');
+       header('location: ../html/StudentPage.php');
       }
    } else {
     header('location: ../html/MainPage.html');

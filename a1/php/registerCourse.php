@@ -58,7 +58,7 @@
 
         }
 
-        header("Refresh:8; url=../html/StudentPage.html");
+        header("Refresh:8; url=../html/StudentPage.php");
     }
 
 ?>
