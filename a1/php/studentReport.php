@@ -22,7 +22,7 @@
 
             $studentID = $row['id'];
             
-            $sql = "SELECT DISTINCT s.courseCode, c.title 
+            $sql = "SELECT DISTINCT s.courseCode, c.title, c.semester 
                 FROM student_courses s
                 JOIN courses c
                 ON s.courseCode = c.courseCode
@@ -48,7 +48,8 @@
                         echo "<table  class='table table-dark table-striped table-bordered border-light table-hover'>
                                 <tr class='table-primary'>
                                     <th>Course Code</th>
-                                    <th>Course Title</th>
+                                    <th>Title</th>
+                                    <th>Semester</th>
                                 </tr>";
                         echo "</div>";
                     echo "</div>";
@@ -60,6 +61,7 @@
                     echo "<tr>";
                     echo "<th>" . $row['courseCode'] . "</th>";
                     echo "<th>" . $row['title'] . "</th>";
+                    echo "<th>" . $row['semester'] . "</th>";
                     echo "</tr>";
                 }
 
