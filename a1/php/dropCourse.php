@@ -1,10 +1,10 @@
 <?php
 require_once('conn.php');
-
+session_start();
 if (isset($_POST['drop_course_btn'])) {
 
   $course = $_POST['dropCode'];
-  $id = 6; //$_SESSION['id'];
+  $id = $_SESSION['id'];
 
   // Validate if course can be dropped
 

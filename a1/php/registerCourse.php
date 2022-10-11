@@ -1,9 +1,10 @@
 <?php   
 
     require_once('conn.php');
+    session_start();
     if (isset($_POST['addCourse']))
     { 
-        $student = 6;// $_SESSION['id'];
+        $student = $_SESSION['id'];
         $course = $_POST['addCode'];
         $currentDate = date('Y-m-d');
 
