@@ -100,10 +100,10 @@
 
             <p></p>
             <label for="dropCode">Input a course code from the list above & submit to drop it from your course list.</label><br>
-            <input type="text" placeholder="Course Code" id="dropCode" maxlength="7" size="7" required onfocusout="validateDropCode()">
+            <input type="text" placeholder="Course Code" name="dropCode" id="dropCode" maxlength="7" size="7" required onfocusout="validateDropCode()">
 
             <p></p>
-            <button type="submit" class="btn" value="Submit">Submit</button>
+            <button name = "drop_course_btn" type="submit" class="btn" value="Submit">Submit</button>
             <button type="button" class="btn cancel" onclick="closeDropCourse()">Cancel</button>
         </form>
     </div>

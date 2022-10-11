@@ -42,7 +42,7 @@
 
                 if ($stmt->execute()) 
                 {
-                    echo "Registered Successfully!";
+                    echo strtoupper($course) . " registered successfully!";
                 } 
                 else 
                 {
