@@ -26,6 +26,6 @@ if (isset($_POST['create_course_btn'])) {
     echo $stmt->error;
     echo "Something went wrong. Could not create course";
   }
-  header("Refresh:5; url=../html/AdminPage.html");
+  header("Refresh:5; url=../html/AdminPage.php");
 }
 ?>

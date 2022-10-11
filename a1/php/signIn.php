@@ -25,7 +25,7 @@ session_start();
      $_SESSION['name'] = ucfirst($logged_in_user['firstName']) . " " . ucfirst($logged_in_user['lastName']);//used to show user name in nav bar
      // check if user is admin or user
      if ($logged_in_user['isAdmin'] === 1) {
-       header('location: ../html/AdminPage.html');
+       header('location: ../html/AdminPage.php');
      } else if ($logged_in_user['isAdmin'] === 0){
        header('location: ../html/StudentPage.html');
       }

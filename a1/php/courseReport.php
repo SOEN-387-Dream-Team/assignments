@@ -18,6 +18,7 @@
 
         //Display of the results
         include 'header.php';
+        include 'navbar.php';
         echo "<body>";        
         echo "<div class='container text-center'>";
         if($result->num_rows > 0)
@@ -60,7 +61,7 @@
         }
             echo "<div class='row'>";
                             echo "<div class='col'>";
-                                echo "<a href='../html/AdminPage.html'><button type='button' class='btn btn-primary'>Close Report</button></a>";
+                                echo "<a href='../html/AdminPage.php'><button type='button' class='btn btn-primary'>Close Report</button></a>";
                             echo "</div>";
                         echo "</div>";
         echo "</div>";//end of container
