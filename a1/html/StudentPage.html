@@ -35,6 +35,28 @@
     <link rel="stylesheet" href="../css/StudentPageStyle.css">
     <script type="text/javascript" src="../js/StudentOption.js"></script>
     <script type="text/javascript" src="../js/Validation.js"></script>
+    <script>
+    function showEnrolledCourses() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("dropList").innerHTML = this.responseText;
+          }
+        };
+        xmlhttp.open("GET","../php/studentCourses.php",true);
+        xmlhttp.send();
+    }
+    function showNonEnrolledCourses() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("addList").innerHTML = this.responseText;
+          }
+        };
+        xmlhttp.open("GET","../php/nonEnrolledCourseStudent.php",true);
+        xmlhttp.send();
+    }
+    </script>
 </head>
 
 <body>
@@ -76,12 +98,12 @@
                     <hr style="width: 80%; text-align: left; margin-left: 0">
                     <div class="button-group">
                         <span class="inline">
-                            <form id="addReport" onclick="openAddCourse()" style="width:100%">
+                            <form id="addReport" onclick="openAddCourse();showNonEnrolledCourses()" style="width:100%">
                                 <input type="button" value="Add Courses"/>
                             </form>
                         </span>
                         <span class="inline">
-                            <form id="dropReport" onclick="openDropCourse()" style="width:100%">
+                            <form id="dropReport" onclick="openDropCourse();showEnrolledCourses()" style="width:100%">
                                 <input type="button" value="Drop Courses"/>
                             </form>
                         </span>
@@ -91,12 +113,12 @@
         </div>
     </div>
     <!--drop course popup-->
-    <div class="form" id="dropPopup">
+    <div class="form-popup" id="dropPopup">
         <form action="../php/dropCourse.php" class="form-container" onsubmit="return validateDropCode()" method="post">
             <h2>Drop a Class</h2>
             <p>TODO : Add an instructional message.</p>
             <label for="dropList">List of Enrolled classes</label>
-            <textarea id="dropList" readonly>--list of enrolled courses--</textarea>
+            <select id="dropList">--list of enrolled courses--</select>
 
             <p></p>
             <label for="dropCode">Input a course code from the list above & submit to drop it from your course list.</label><br>
@@ -108,13 +130,13 @@
         </form>
     </div>
     <!--add course popup-->
-    <div class="form" id="addPopup">
+    <div class="form-popup" id="addPopup">
         <form action="../php/registerCourse.php" class="form-container" onsubmit="return validateAddCode()" method="post">
             <h2>Add a Class</h2>
             <p>TODO : Add an instructional message.</p>
             <label for="addList">List of Un-enrolled classes</label>
-            <textarea id="addList" readonly>--list of un-enrolled courses--</textarea>
-            
+            <select id="addList">--list of un-enrolled courses--</select>
+
             <p></p>
             <label for="addCode">Input a course code from the list above & submit to add it to your course list.</label><br>
             <input type="text" placeholder="Course Code" name="addCode" id="addCode" maxlength="7" size="7" required onfocusout="validateAddCode()">
