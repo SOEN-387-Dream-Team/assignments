@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2022 at 07:59 AM
+-- Generation Time: Oct 11, 2022 at 06:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -50,8 +50,8 @@ INSERT INTO `courses` (`courseCode`, `title`, `semester`, `room`, `startDate`, `
 ('COMP326', 'Computer Architecture', 'FALL-2022', 'H925', '2022-10-09', '2022-12-31', 'Wednesday', '10:30:00', 'Richard J'),
 ('COMP333', 'Data Analytics', 'FALL-2022', 'H525', '2022-10-09', '2022-12-31', 'Wednesday', '13:00:00', 'Matthew R'),
 ('COMP335', 'Introduction to Theoretical Computer Science', 'FALL-2022', 'H605', '2022-10-09', '2022-12-31', 'Friday', '14:00:00', 'Allison D'),
-('COMP348', 'Principles of Programming Languages', 'SUMMER1-2023', 'H725', '2022-05-01', '2022-08-31', 'Friday', '18:00:00', 'Lisa E'),
-('COMP352', 'Data Structures and Algorithms', 'SUMMER1-2023', 'H925', '2022-05-01', '2022-08-31', 'Thursday', '16:00:00', 'Rebecca MJ');
+('COMP348', 'Principles of Programming Languages', 'SUMMER1-2023', 'H725', '2023-05-01', '2023-08-31', 'Friday', '18:00:00', 'Lisa E'),
+('COMP352', 'Data Structures and Algorithms', 'SUMMER1-2023', 'H925', '2023-05-01', '2023-08-31', 'Thursday', '16:00:00', 'Rebecca MJ');
 
 -- --------------------------------------------------------
 
