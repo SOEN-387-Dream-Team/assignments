@@ -7,10 +7,16 @@
         $student = $_SESSION['id'];
         $course = $_POST['addCode'];
         $currentDate = date('Y-m-d');
+        $semesterChosen = $_POST['semesterChoice'];
 
-        $numEnroll = "SELECT COUNT(courseCode) FROM student_courses s WHERE s.id =?";
+        $numEnroll = "SELECT COUNT(s.courseCode) 
+                      FROM student_courses s 
+                      INNER JOIN courses c 
+                      ON s.courseCode = c.courseCode 
+                      WHERE s.id = ? AND c.semester = ?;";
+
         $stmt = $conn->prepare($numEnroll);
-        $stmt->bind_param("i", $student);
+        $stmt->bind_param("is", $student, $semesterChosen);
         $stmt->execute();
         $result = $stmt->get_result();
         
@@ -18,7 +24,7 @@
         if($result->num_rows > 5)
         {
             echo $stmt->error;
-            echo "Cannot enroll in more than 5 courses at a time";
+            echo "Cannot enroll in more than 5 courses at a time per semester";
         }
         else
         {
