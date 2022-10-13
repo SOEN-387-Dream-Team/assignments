@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;">
 <?php
-    session_start();
+if(!isset($_SESSION)) {
+  session_start();
+}
 ?>
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Soen 387 School App</a>
@@ -24,7 +26,7 @@
                     ?>
                     <?php
                 }
-                else header("Location: ../html/MainPage.php");
+                else header("Location: ../html/MainPage.html");
             ?>
                 <a class="nav-link" aria-current="page" href="../php/logout.php">
                 <i class="bi bi-power" width="100" height="100" style="color: red;"></i>Logout

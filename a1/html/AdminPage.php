@@ -8,9 +8,15 @@
     <script type="text/javascript" src="../js/Validation.js"></script>
 </head>
 <!--Navigation bar with bootstrap header -->
-<?php 
+<?php
+if(!isset($_SESSION)) {
+  session_start();
+}
 include '../php/header.php';
 include '../php/navbar.php';
+if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
+  header("Location: ../php/error.php");
+}
 ?>
 <body>
 <!--main page-->

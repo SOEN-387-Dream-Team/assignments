@@ -18,7 +18,7 @@ session_start();
 
 
    if ($result->num_rows > 0) { // user found
-     $_SESSION['success']  = true;
+     $_SESSION['loggedIn']  = true;
      $logged_in_user = $result->fetch_assoc();
      $_SESSION['user'] = $logged_in_user;
      $_SESSION['id'] = $logged_in_user['id'];
