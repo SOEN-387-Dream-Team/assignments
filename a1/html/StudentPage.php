@@ -122,6 +122,18 @@ if ($_SESSION['user']['isAdmin'] === 1 or $_SESSION['loggedIn'] === false) {
         <form action="../php/registerCourse.php" class="form-container" onsubmit="return validateAddCode()" method="post">
             <h2>Add a Class</h2>
             <p>TODO : Add an instructional message.</p>
+
+            <label for="semesterChoice">Select a Semester</label>
+            <select name= "semesterChoice" id = "semesterChoice">
+                <option value="FALL-2022">Fall 2022</option>
+                <option value="WINTER-2023">Winter 2023</option>
+                <option value="SUMMER1-2023">Summer 1 2023</option>
+                <option value="SUMMER2-2023">Summer 2 2023</option>
+                
+            </select>
+
+            <p></p>
+
             <label for="addList">List of Un-enrolled classes</label>
             <select id="addList">--list of un-enrolled courses--</select>
 
