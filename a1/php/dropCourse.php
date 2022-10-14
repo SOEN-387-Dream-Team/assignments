@@ -1,6 +1,7 @@
 <?php
 require_once('conn.php');
-session_start();
+include 'header.php';
+include 'navbar.php';
 if (isset($_POST['drop_course_btn'])) {
 
   $course = $_POST['dropCode'];
@@ -34,18 +35,16 @@ if (isset($_POST['drop_course_btn'])) {
       $sql = "DELETE FROM student_courses WHERE courseCode=UPPER(?) AND id=?";
       $stmt = $conn->prepare($sql);
       $stmt->bind_param("si", $course, $id);
-  
-      if ($stmt->execute()) {
-        echo "Course " . strtoupper($course) . " dropped successfully";
-      } else {
-        echo $stmt->error;
-        echo "\nSomething went wrong. Could not drop course";
-      }
     }
-    else
-    {
-        echo "Requirements for course drop not met: You have passed the deadline to drop this course.";
-    }
+  }
+  if ($stmt->execute()) {
+    echo '<div class="alert alert-success">';
+    echo "<strong>Course {$course} dropped successfully</strong>";
+    echo "</div>";
+  } else {
+    echo '<div class="alert alert-danger">';
+    echo "<strong>Something went wrong. Could not drop course {$course} <br> {$stmt->error}</strong>";
+    echo "</div>";
   }
   header("Refresh:5; url=../html/StudentPage.php");
 }

@@ -1,6 +1,7 @@
 <?php
-    require_once('conn.php');
-    session_start();
+require_once('conn.php');
+include 'header.php';
+include 'navbar.php';
     if (isset($_POST['addCourse']))
     {
         $student = $_SESSION['id'];
@@ -25,7 +26,6 @@
         {
             print_r($numRows);
             echo $stmt->error;
-            echo "Cannot enroll in more than 5 courses at a time per semester";
         }
         else
         {
@@ -46,24 +46,18 @@
 
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("is", $student, $course);
-
-                if ($stmt->execute())
-                {
-                    echo strtoupper($course) . " registered successfully!";
-                }
-                else
-                {
-                    echo $stmt->error;
-                    echo "Something went wrong. Course was not registered";
-                }
-            }
-            else
-            {
-                echo "Requirements for course registration not met: You have passed the deadline to enroll in this course.";
             }
 
         }
-
+        if ($stmt->execute()) {
+            echo '<div class="alert alert-success">';
+            echo "<strong>Course {$course} enrolled to successfully</strong>";
+            echo "</div>";
+        } else {
+            echo '<div class="alert alert-danger">';
+            echo "<strong>Something went wrong. Could not enroll into course {$course} <br> {$stmt->error}</strong>";
+            echo "</div>";
+        }
         header("Refresh:8; url=../html/StudentPage.php");
     }
 
