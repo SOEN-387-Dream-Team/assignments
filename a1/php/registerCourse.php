@@ -1,25 +1,25 @@
-<?php   
+<?php
 
     require_once('conn.php');
     session_start();
     if (isset($_POST['addCourse']))
-    { 
+    {
         $student = $_SESSION['id'];
-        $course = $_POST['addCode'];
+        $course = $_POST['courseCode'];
         $currentDate = date('Y-m-d');
         $semesterChosen = $_POST['semesterChoice'];
 
-        $numEnroll = "SELECT COUNT(s.courseCode) 
-                      FROM student_courses s 
-                      INNER JOIN courses c 
-                      ON s.courseCode = c.courseCode 
+        $numEnroll = "SELECT COUNT(s.courseCode)
+                      FROM student_courses s
+                      INNER JOIN courses c
+                      ON s.courseCode = c.courseCode
                       WHERE s.id = ? AND c.semester = ?;";
 
         $stmt = $conn->prepare($numEnroll);
         $stmt->bind_param("is", $student, $semesterChosen);
         $stmt->execute();
         $result = $stmt->get_result();
-        
+
 
         if($result->num_rows > 5)
         {
@@ -29,10 +29,10 @@
         else
         {
             //Purpose of this sql is to check if we are within the 1 week time limit to add the course
-            $dateSql = "SELECT startDate 
-                        FROM courses c 
-                        WHERE CURDATE() > c.startDate 
-                        AND CURDATE() < DATE_ADD(c.startDate, INTERVAL 7 DAY) 
+            $dateSql = "SELECT startDate
+                        FROM courses c
+                        WHERE CURDATE() > c.startDate
+                        AND CURDATE() < DATE_ADD(c.startDate, INTERVAL 7 DAY)
                         AND c.courseCode = UPPER(?)";
 
             $stmt = $conn->prepare($dateSql);
@@ -47,11 +47,11 @@
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("is", $student, $course);
 
-                if ($stmt->execute()) 
+                if ($stmt->execute())
                 {
                     echo strtoupper($course) . " registered successfully!";
-                } 
-                else 
+                }
+                else
                 {
                     echo $stmt->error;
                     echo "Something went wrong. Course was not registered";

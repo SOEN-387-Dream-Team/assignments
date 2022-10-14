@@ -106,11 +106,7 @@ if ($_SESSION['user']['isAdmin'] === 1 or $_SESSION['loggedIn'] === false) {
             <h2>Drop a Class</h2>
             <p>TODO : Add an instructional message.</p>
             <label for="dropList">List of Enrolled classes</label>
-            <select id="dropList">--list of enrolled courses--</select>
-
-            <p></p>
-            <label for="dropCode">Input a course code from the list above & submit to drop it from your course list.</label><br>
-            <input type="text" placeholder="Course Code" name="dropCode" id="dropCode" maxlength="7" size="7" required onfocusout="validateDropCode()">
+            <select id="dropList" name="dropCode">--list of enrolled courses--</select>
 
             <p></p>
             <button name = "drop_course_btn" type="submit" class="btn" value="Submit">Submit</button>
@@ -129,17 +125,13 @@ if ($_SESSION['user']['isAdmin'] === 1 or $_SESSION['loggedIn'] === false) {
                 <option value="WINTER-2023">Winter 2023</option>
                 <option value="SUMMER1-2023">Summer 1 2023</option>
                 <option value="SUMMER2-2023">Summer 2 2023</option>
-                
+
             </select>
 
             <p></p>
 
             <label for="addList">List of Un-enrolled classes</label>
-            <select id="addList">--list of un-enrolled courses--</select>
-
-            <p></p>
-            <label for="addCode">Input a course code from the list above & submit to add it to your course list.</label><br>
-            <input type="text" placeholder="Course Code" name="addCode" id="addCode" maxlength="7" size="7" required onfocusout="validateAddCode()">
+            <select id="addList" name="courseCode">--list of un-enrolled courses--</select>
 
             <p></p>
             <button name = "addCourse" type="submit" class="btn" value="Submit">Submit</button>
