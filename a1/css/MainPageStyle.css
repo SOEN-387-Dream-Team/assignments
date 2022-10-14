@@ -18,12 +18,12 @@
 }
 
 body {
-    background-color: lavender;
+    background-color: white;
 
 }
 
 .box {
-    background-color: ghostwhite;
+    background-color: #e3f0fd;
     margin: 20px auto;
     min-height: 200px;
     width: 480px;
@@ -45,7 +45,7 @@ body {
     z-index: 3;
     border: 1px solid #d9d9d9;
     padding: 10px 10px;
-    background: #ffffff;
+    background-color: white;
     box-sizing: border-box;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
@@ -68,7 +68,7 @@ input {
     letter-spacing: normal;
     word-spacing: normal;
     text-transform: none;
-    text-indent: 0px;
+    text-indent: 0;
     text-shadow: none;
     text-align: start;
     appearance: auto;
@@ -77,13 +77,13 @@ input {
 }
 
 h1{
-    color: rebeccapurple;
+    color: mediumblue;
 }
 
 button {
     background-color: lightgray;
     border: 1px solid black;
-    color: indigo;
+    color: royalblue;
     padding: 10px 30px;
     text-align: center;
     text-decoration: none;

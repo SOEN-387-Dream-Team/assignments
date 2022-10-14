@@ -24,7 +24,7 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
     <div class="inner">
         <h1>Administrator Information</h1>
         <hr style="width: 100%; text-align: left; margin-left: 0">
-        <p>Welcome, Admin First Name & Last Name!</p>
+        <p>Welcome!</p>
         <hr style="width: 50%; text-align: left; margin-left: 0">
         <!--main buttons-->
         <div class="button-group">
@@ -49,27 +49,44 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
 <!--Course Report Popup-->
     <div class="form-popup" id="coursePopup">
         <form action="../php/courseReport.php" onsubmit="return validateCode()" method="post">
-            <h2>Course Report</h2>
-            <p>Enter a Course Code to view all Students registered to this course.</p>
-            <label for="courseCode">Course Code</label>
-            <select id="courseCode" name="courseCode"> </select>
+            <fieldset>
+                <h2>Course Report</h2>
+                <hr style="width: 100%; text-align: left; margin-left: 0">
+                <p>Enter a Course Code to view all Students registered to this course.</p>
+                <hr style="width: 50%; text-align: left; margin-left: 0">
+                <ul>
+                    <li>
+                        <label for="courseCode">Course Code</label>
+                        <select id="courseCode" name="courseCode"> </select>
+                    </li>
+                </ul>
+            </fieldset>
 
-
-            <button name="courseReport" type="submit" class="btn" value="Submit">Submit</button>
-            <button type="button" class="btn cancel" onclick="closeCourseForm()">Cancel</button>
+            <hr style="width: 50%; text-align: left; margin-left: 0">
+            <button name="courseReport" class="btn btn-primary form-control-sm" type="submit" value="Submit">Submit</button>
+            <button type="button" class="btn btn-primary form-control-sm cancel" onclick="closeCourseForm()">Cancel</button>
         </form>
     </div>
 
 <!--Student Report Popup-->
     <div class="form-popup" id="studentPopup">
         <form action="../php/studentReport.php" onsubmit="return validateStudent()" method="post">
-            <h2>Student's Course Report</h2>
-            <p>Enter a Student's name (First & Last Name) to view all Courses the Student is registered in.</p>
-            <label for="studentName">Student's Full Name</label>
-            <select id="studentName" name="studentName"></select>
+            <fieldset>
+                <h2>Student's Course Report</h2>
+                <hr style="width: 100%; text-align: left; margin-left: 0">
+                <p>Enter a Student's name (First & Last Name) to view all Courses the Student is registered in.</p>
+                <hr style="width: 50%; text-align: left; margin-left: 0">
+                <ul>
+                    <li>
+                        <label for="studentName">Student's Full Name</label>
+                        <select id="studentName" name="studentName"></select>
+                    </li>
+                </ul>
+            </fieldset>
 
-            <button name ="studentReport" type="submit" class="btn" value="Submit">Submit</button>
-            <button type="button"  class="btn cancel" onclick="closeStudentForm()">Cancel</button>
+            <hr style="width: 50%; text-align: left; margin-left: 0">
+            <button name ="studentReport" class="form-control-sm" type="submit" value="Submit">Submit</button>
+            <button type="button"  class="form-control-sm cancel" onclick="closeStudentForm()">Cancel</button>
         </form>
     </div>
 
@@ -78,7 +95,9 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
         <form action="../php/createCourse.php"  method="post">
             <fieldset>
                 <h2>Course Creation</h2>
+                <hr style="width: 100%; text-align: left; margin-left: 0">
                 <p>Enter the information for a new Course.</p>
+                <hr style="width: 50%; text-align: left; margin-left: 0">
                 <ul>
                     <li>
                         <label for="newCode">Course Code</label><br>
@@ -134,9 +153,11 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
                         <input type="text" name="room" placeholder="Enter a valid Course Room" maxlength="4" size="20" id="newRoom" required onfocusout="validateRoom()">
                     </li>
                 </ul>
+
+                <hr style="width: 50%; text-align: left; margin-left: 0">
+                <button type="submit" class="form-control-sm" name="create_course_btn" value="Submit">Submit</button>
+                <button type="button" class="form-control-sm" onclick="closeNewForm()">Cancel</button>
             </fieldset>
-            <button type="submit" class="btn" name="create_course_btn" value="Submit">Submit</button>
-            <button type="button" class="btn cancel" onclick="closeNewForm()">Cancel</button>
         </form>
     </div>
 </div>
