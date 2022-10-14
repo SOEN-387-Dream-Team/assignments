@@ -63,8 +63,8 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
             </fieldset>
 
             <hr style="width: 50%; text-align: left; margin-left: 0">
-            <button name="courseReport" class="btn btn-primary form-control-sm" type="submit" value="Submit">Submit</button>
-            <button type="button" class="btn btn-primary form-control-sm cancel" onclick="closeCourseForm()">Cancel</button>
+            <button name="courseReport" class="form-control-sm" type="submit" value="Submit">Submit</button>
+            <button type="button" class="form-control-sm cancel" onclick="closeCourseForm()">Cancel</button>
         </form>
     </div>
 
