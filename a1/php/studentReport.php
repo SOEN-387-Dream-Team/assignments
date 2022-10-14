@@ -4,7 +4,7 @@
     if (isset($_POST['studentReport']))
     {
         $student = explode(" ", strtolower($_POST['studentName']));
-        
+
         $studentSql ="SELECT id FROM user u WHERE u.firstName=? AND u.lastName=?";
 
         $stmt = $conn->prepare($studentSql);
@@ -22,8 +22,8 @@
         if($row > 0){
 
             $studentID = $row['id'];
-            
-            $sql = "SELECT DISTINCT s.courseCode, c.title, c.semester 
+
+            $sql = "SELECT DISTINCT s.courseCode, c.title, c.semester
                 FROM student_courses s
                 JOIN courses c
                 ON s.courseCode = c.courseCode
@@ -33,8 +33,8 @@
             $stmt->bind_param("i", $studentID);
             $stmt->execute();
             $result = $stmt->get_result();
-            
-            
+
+
             if($result->num_rows > 0)
             {
                 //Display of the results (continued)
@@ -55,7 +55,7 @@
                         echo "</div>";
                     echo "</div>";
 
-                
+
 
                 while($row= $result->fetch_assoc())
                 {
@@ -75,7 +75,7 @@
                     echo "</p>";
                 }
         }
-        else 
+        else
         {
             echo "<p class='alert alert-danger'>";
             echo "Invalid User Entry: " .  ucfirst($student[0]) . " " . ucfirst($student[1]) . ". Please enter a valid user name.";
@@ -88,7 +88,7 @@
                         echo "</div>";
                     echo "</div>";
                 echo "</div>";//end of container
-        include 'footer.php';   
+        include 'footer.php';
     }
 
 ?>

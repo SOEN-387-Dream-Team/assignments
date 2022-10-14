@@ -85,11 +85,11 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
                 <ul>
                     <li>
                         <label for="newCode">Course Code</label><br>
-                        <input type="text" placeholder="Enter a valid Course Code" id="newCode" maxlength="7" size="7" required onfocusout="validateNewCode()">
+                        <input type="text" name="code" placeholder="Enter a valid Course Code" id="newCode" maxlength="7" size="7" required onfocusout="validateNewCode()">
                     </li>
                     <li>
                         <label for="newTitle">Course Title</label><br>
-                        <input type="text" placeholder="Enter a valid Course Title" id="newTitle" size="30" required onfocusout="validateTitle()">
+                        <input type="text" name="title" placeholder="Enter a valid Course Title" id="newTitle" size="30" required onfocusout="validateTitle()">
                     </li>
                     <li>
                         <label>Course Semester</label><br>
@@ -126,27 +126,19 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
                     </li>
                     <li>
                         <label for="newTime">Course Time</label><br>
-                        <input type="time" id="newTime" min="08:00" max="21:00" required>
+                        <input type="time" name="time" id="newTime" min="08:00" max="21:00" required>
                     </li>
                     <li>
                         <label for="newInstructor">Course Instructor</label><br>
-                        <input type="text" placeholder="Enter a valid Course Instructor" size="50" id="newInstructor" required onfocusout="validateInstructor()">
+                        <input type="text" name="instructor" placeholder="Enter a valid Course Instructor" size="50" id="newInstructor" required onfocusout="validateInstructor()">
                     </li>
                     <li>
                         <label for="newRoom">Course Room</label><br>
-                        <input type="text" placeholder="Enter a valid Course Room" maxlength="4" size="20" id="newRoom" required onfocusout="validateRoom()">
-                    </li>
-                    <li>
-                        <label for="newStartDate">Course Start Date</label><br>
-                        <input type="date" id="newStartDate" required>
-                    </li>
-                    <li>
-                        <label for="newEndDate">Course End Date</label><br>
-                        <input type="date" id="newEndDate" required onfocusout="validateDate()">
+                        <input type="text" name="room" placeholder="Enter a valid Course Room" maxlength="4" size="20" id="newRoom" required onfocusout="validateRoom()">
                     </li>
                 </ul>
             </fieldset>
-            <button type="submit" class="btn" name="create_course_button" value="Submit">Submit</button>
+            <button type="submit" class="btn" name="create_course_btn" value="Submit">Submit</button>
             <button type="button" class="btn cancel" onclick="closeNewForm()">Cancel</button>
         </form>
     </div>
