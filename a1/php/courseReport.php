@@ -4,7 +4,6 @@
     if (isset($_POST['courseReport']))
     {
         $course = $_POST['courseCode'];
-        echo $course;
 
         $sql = "SELECT DISTINCT s.id, u.firstName, u.lastName
                 FROM student_courses s

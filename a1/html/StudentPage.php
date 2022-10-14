@@ -37,7 +37,7 @@ if ($_SESSION['user']['isAdmin'] === 1 or $_SESSION['loggedIn'] === false) {
             <hr style="width: 80%; text-align: left; margin-left: 0">
             <div class="button-group">
                         <span class="inline">
-                            <form id="addReport" onclick="openAddCourse();showNonEnrolledCourses()" style="width:100%">
+                            <form id="addReport" onclick="openAddCourse();" style="width:100%">
                                 <input type="button" value="Add Courses"/>
                             </form>
                         </span>
@@ -71,7 +71,8 @@ if ($_SESSION['user']['isAdmin'] === 1 or $_SESSION['loggedIn'] === false) {
             <p>A maximum of 5 courses can be enrolled at the same time in the same semester.</p>
 
             <label for="semesterChoice">Select a Semester</label>
-            <select name= "semesterChoice" id = "semesterChoice">
+            <select name= "semesterChoice" id = "semesterChoice" onchange="showNonEnrolledCourses()">
+                <option disabled selected value> -- select a semester -- </option>
                 <option value="FALL-2022">Fall 2022</option>
                 <option value="WINTER-2023">Winter 2023</option>
                 <option value="SUMMER1-2023">Summer 1 2023</option>
@@ -89,5 +90,19 @@ if ($_SESSION['user']['isAdmin'] === 1 or $_SESSION['loggedIn'] === false) {
         </form>
     </div>
 </div>
+<script>
+    function showNonEnrolledCourses() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("addList").innerHTML = this.responseText;
+        }
+    };
+    var semesterValue = document.getElementById('semesterChoice').value;
+    console.log(semesterValue);
+    xmlhttp.open("GET", "../php/nonEnrolledCourseStudent.php?semesterValue=" + semesterValue, true);
+    xmlhttp.send();
+}
+</script>
 </body>
 </html>
