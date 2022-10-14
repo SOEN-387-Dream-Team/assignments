@@ -1,5 +1,4 @@
 <?php
-
     require_once('conn.php');
     session_start();
     if (isset($_POST['addCourse']))
@@ -31,8 +30,7 @@
             //Purpose of this sql is to check if we are within the 1 week time limit to add the course
             $dateSql = "SELECT startDate
                         FROM courses c
-                        WHERE CURDATE() > c.startDate
-                        AND CURDATE() < DATE_ADD(c.startDate, INTERVAL 7 DAY)
+                        WHERE CURDATE() < DATE_ADD(c.startDate, INTERVAL 7 DAY)
                         AND c.courseCode = UPPER(?)";
 
             $stmt = $conn->prepare($dateSql);
