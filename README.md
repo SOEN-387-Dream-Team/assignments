@@ -1,5 +1,13 @@
 # Assignment 1
-asdf
+This web application will allow a students to register to courses online. As well as allowing an Administrator to edit and view course and student information.
+
+## Description
+The web application will be seperated into 3 different pages: the Main front page, the Student account page, and the Administrator account page.
+On the Main front page, the user will need to sign into their account, which is found in the MYSQL database. 
+With an Administrator credentials, the page will load the Administrator account page. With a Student credentials, the page will load the Student account page.
+On the Administrator page, the user can choose to look at a Student's list of enrolled courses, to look at a course's enrolled students, or to create a new course.
+On the Student page, the user can choose to either add a course to enroll to for a specific semester, or to drop an enrolled course.
+
 ## Demo Base Setup
 ![image](https://user-images.githubusercontent.com/60101999/195935207-54d60d55-fcf5-481b-8dd4-763e4ee80cf4.png)
 <hr />
