@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2022 at 06:18 PM
+-- Generation Time: Oct 14, 2022 at 09:46 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `soen387_school`
 --
+CREATE DATABASE IF NOT EXISTS `soen387_school` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `soen387_school`;
 
 -- --------------------------------------------------------
 
@@ -44,12 +46,14 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`courseCode`, `title`, `semester`, `room`, `startDate`, `endDate`, `days`, `time`, `instructor`) VALUES
+('COMP101', 'Intro to Computer Science', 'FALL-2022', 'H725', '2022-05-01', '2022-08-31', 'Friday', '18:00:00', 'Lisa E'),
 ('COMP232', 'Mathematics for Computer Science', 'FALL-2022', 'H640', '2022-10-09', '2022-12-31', 'Monday', '08:30:00', 'Jane A'),
 ('COMP233', 'Probability and Statistics for Computer Science', 'FALL-2022', 'H543', '2022-10-09', '2022-12-31', 'Monday', '19:30:10', 'Samuel J'),
 ('COMP248', 'Object‑Oriented Programming I ', 'FALL-2022', 'H843', '2022-10-09', '2022-12-31', 'Tuesday', '10:30:00', 'Richard J'),
 ('COMP326', 'Computer Architecture', 'FALL-2022', 'H925', '2022-10-09', '2022-12-31', 'Wednesday', '10:30:00', 'Richard J'),
 ('COMP333', 'Data Analytics', 'FALL-2022', 'H525', '2022-10-09', '2022-12-31', 'Wednesday', '13:00:00', 'Matthew R'),
 ('COMP335', 'Introduction to Theoretical Computer Science', 'FALL-2022', 'H605', '2022-10-09', '2022-12-31', 'Friday', '14:00:00', 'Allison D'),
+('COMP346', 'Operating Systems', 'SUMMER2-2023', 'H125', '2023-06-01', '2023-08-31', 'Thursday', '17:00:00', 'Elisa K.'),
 ('COMP348', 'Principles of Programming Languages', 'SUMMER1-2023', 'H725', '2023-05-01', '2023-08-31', 'Friday', '18:00:00', 'Lisa E'),
 ('COMP352', 'Data Structures and Algorithms', 'SUMMER1-2023', 'H925', '2023-05-01', '2023-08-31', 'Thursday', '16:00:00', 'Rebecca MJ');
 
