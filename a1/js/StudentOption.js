@@ -57,14 +57,14 @@ function showEnrolledCourses() {
     xmlhttp.send();
 }
 
-// function showNonEnrolledCourses() {
-//     var xmlhttp = new XMLHttpRequest();
-//     xmlhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) {
-//             document.getElementById("addList").innerHTML = this.responseText;
-//         }
-//     };
-//     var semesterValue = document.getElementById('semesterChoice').value;
-//     xmlhttp.open("GET", "../php/nonEnrolledCourseStudent.php?semesterValue=" + semesterValue, true);
-//     xmlhttp.send();
-// }
+function showNonEnrolledCourses() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("addList").innerHTML = this.responseText;
+        }
+    };
+    var semesterValue = document.getElementById('semesterChoice').value;
+    xmlhttp.open("GET", "../php/nonEnrolledCourseStudent.php?semesterValue=" + semesterValue, true);
+    xmlhttp.send();
+}
