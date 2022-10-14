@@ -4,7 +4,8 @@
     if (isset($_POST['courseReport']))
     {
         $course = $_POST['courseCode'];
-    
+        echo $course;
+
         $sql = "SELECT DISTINCT s.id, u.firstName, u.lastName
                 FROM student_courses s
                 JOIN user u
@@ -19,7 +20,7 @@
         //Display of the results
         include 'header.php';
         include 'navbar.php';
-        echo "<body>";        
+        echo "<body>";
         echo "<div class='container text-center'>";
         if($result->num_rows > 0)
         {
@@ -51,7 +52,7 @@
                 echo "</tr>";
             }
 
-                echo "</table>";                    
+                echo "</table>";
         }
         else
         {
@@ -65,7 +66,7 @@
                             echo "</div>";
                         echo "</div>";
         echo "</div>";//end of container
-        include 'footer.php';        
+        include 'footer.php';
     }
 
 

@@ -29,12 +29,12 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
         <!--main buttons-->
         <div class="button-group">
             <span class="inline">
-                <form id="courseReport" onclick="openCourseForm()" style="width:100%">
+                <form id="courseReport" onclick="openCourseForm();showCourses()" style="width:100%">
                     <input type="button" value="Course Report"/>
                 </form>
             </span>
             <span class="inline">
-                <form id="studentReport" onclick="openStudentForm()" style="width:100%">
+                <form id="studentReport" onclick="openStudentForm();showStudents()" style="width:100%">
                     <input type="button" value="Student Report"/>
                 </form>
             </span>
@@ -52,9 +52,8 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
             <h2>Course Report</h2>
             <p>Enter a Course Code to view all Students registered to this course.</p>
             <label for="courseCode">Course Code</label>
-            <input type="text" placeholder="Enter a valid Course Code" name ="courseCode" id="courseCode" maxlength="7" size="7" required onfocusout="validateCode()">
+            <select id="courseCode" name="courseCode"> </select>
 
-            <p>List of students</p>
 
             <button name="courseReport" type="submit" class="btn" value="Submit">Submit</button>
             <button type="button" class="btn cancel" onclick="closeCourseForm()">Cancel</button>
@@ -67,9 +66,7 @@ if ($_SESSION['user']['isAdmin'] === 0 or $_SESSION['loggedIn'] === false) {
             <h2>Student's Course Report</h2>
             <p>Enter a Student's name (First & Last Name) to view all Courses the Student is registered in.</p>
             <label for="studentName">Student's Full Name</label>
-            <input type="text" placeholder="Enter a valid Student's Full Name" name ="studentName" id="studentName" size="50" required onfocusout="validateStudent()">
-
-            <p>List of courses</p>
+            <select id="studentName" name="studentName"></select>
 
             <button name ="studentReport" type="submit" class="btn" value="Submit">Submit</button>
             <button type="button"  class="btn cancel" onclick="closeStudentForm()">Cancel</button>
