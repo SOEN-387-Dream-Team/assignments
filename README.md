@@ -4,6 +4,12 @@ This web application will allow a students to register to courses online. As wel
 ## Description
 The web application will be seperated into 3 different pages: the Main front page, the Student account page, and the Administrator account page.
 
+## Authors
+Duc Huy Bui - 40061043
+Mauran Pavan - 27400705
+Peter Vourantonis - 40157751
+Gabriel
+
 On the Main front page, the user will need to sign into their account, which is found in the MYSQL database. 
 With an Administrator credentials, the page will load the Administrator account page. With a Student credentials, the page will load the Student account page.
 
